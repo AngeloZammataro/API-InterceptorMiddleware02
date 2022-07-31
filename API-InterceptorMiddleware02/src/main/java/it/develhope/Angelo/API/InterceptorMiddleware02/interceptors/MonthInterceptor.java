@@ -28,6 +28,7 @@ public class MonthInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String monthNumberString = request.getHeader("monthNumber");
         if (monthNumberString == null){
+            response.setStatus(400);
             return true;
         }
         int monthNumber = Integer.parseInt(monthNumberString);
@@ -36,8 +37,17 @@ public class MonthInterceptor implements HandlerInterceptor {
         }).findAny();
 
         if(month.isPresent()){
-            request.setAttribute("month",month.get());
+            request.setAttribute("MonthInterceptor-month",month.get());
+        }else {
+            response.setStatus(400);
         }
+
+        if(month.isEmpty()){
+            //returns an empty Month with all the string values set to nope
+            request.setAttribute("MonthInterceptor-month",
+                    new Month(0,"nope","nope","nope"));
+        }
+
         return true;
     }
 }

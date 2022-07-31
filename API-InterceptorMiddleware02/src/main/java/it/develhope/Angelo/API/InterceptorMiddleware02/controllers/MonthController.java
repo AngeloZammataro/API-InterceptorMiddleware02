@@ -10,16 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/months")
 public class MonthController {
-/*
-    //returns a Month using a specific request attribute
-    @GetMapping("/months")
-    public Month getMonth(Month month){
-        return new Month(1,"August","Agosto","August");
-    }
-*/
+
     @GetMapping("")
     public Month getMonth(HttpServletRequest request){
-        Month month = (Month) request.getAttribute("month");
+        Month month = (Month) request.getAttribute("MonthInterceptor-month");
         return month;
     }
 }
