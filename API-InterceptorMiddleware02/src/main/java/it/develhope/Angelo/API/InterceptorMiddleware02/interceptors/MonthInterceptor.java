@@ -1,9 +1,7 @@
 package it.develhope.Angelo.API.InterceptorMiddleware02.interceptors;
 
 import it.develhope.Angelo.API.InterceptorMiddleware02.entities.Month;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;

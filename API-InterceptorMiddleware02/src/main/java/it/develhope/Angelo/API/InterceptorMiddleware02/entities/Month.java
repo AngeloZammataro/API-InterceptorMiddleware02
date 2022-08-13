@@ -1,6 +1,5 @@
 package it.develhope.Angelo.API.InterceptorMiddleware02.entities;
 
-
 public class Month {
 
     private int monthNumber;
