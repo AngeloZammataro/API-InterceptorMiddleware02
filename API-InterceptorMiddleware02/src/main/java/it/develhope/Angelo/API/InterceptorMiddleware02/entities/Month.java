@@ -16,11 +16,6 @@ public class Month {
         this.italianName = italianName;
         this.germanName = germanName;
     }
-    public Month( String englishName, String italianName, String germanName) {
-        this.englishName = englishName;
-        this.italianName = italianName;
-        this.germanName = germanName;
-    }
 
     public int getMonthNumber() {
         return monthNumber;
